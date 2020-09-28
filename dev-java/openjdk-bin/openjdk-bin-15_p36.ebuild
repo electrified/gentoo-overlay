@@ -11,7 +11,7 @@ abi_uri() {
 		)"
 }
 
-MY_PV=${PV}
+MY_PV=${PV/_p/+}
 SLOT=15 #$(ver_cut 1)
 
 SRC_URI="
