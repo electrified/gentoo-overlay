@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit java-vm-2
+inherit eapi7-ver java-vm-2
 
 abi_uri() {
 	echo "${2-$1}? (
@@ -11,8 +11,8 @@ abi_uri() {
 		)"
 }
 
-MY_PV=${PV/_p/+}
-SLOT=${MY_PV%%[.+]*}
+MY_PV=${PV}
+SLOT=15 #$(ver_cut 1)
 
 SRC_URI="
 	$(abi_uri arm)
